@@ -1,0 +1,56 @@
+html, body {
+  height: 100%;
+  margin: 0; }
+
+.homePage {
+  display: flex;
+  flex-direction: row; }
+
+.sideMenu {
+  flex: 0 1 300px;
+  background: #FF163E; }
+  .sideMenu .sideMenu_link_active {
+    background-color: #DA260D; }
+
+.loginPage {
+  font-size: 16px;
+  min-width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* IE 9 */
+  -webkit-transform: translate(-50%, -50%);
+  /* Chrome, Safari, Opera */ }
+  .loginPage .loginPage_inputContainer {
+    margin-bottom: 20px; }
+  .loginPage .loginPage_input {
+    background-color: #fff;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #333;
+    outline: none;
+    padding: 8px 12px;
+    width: 100%;
+    line-height: 24px;
+    font-size: 1rem; }
+  .loginPage .loginPage_button {
+    width: 100%;
+    font-weight: 500;
+    display: block;
+    padding: 0 30px;
+    position: relative;
+    text-align: center;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    outline: none;
+    background: #FF163E;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer; }
+    .loginPage .loginPage_button:hover {
+      background-color: #DA260D; }
