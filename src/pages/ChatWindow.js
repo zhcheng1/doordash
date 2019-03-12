@@ -16,7 +16,13 @@ class ChatWindow extends React.Component {
         this.onMessageChange = this.onMessageChange.bind(this);
 	}
 
+    scrollToBottom() {
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    }
+
     componentDidMount() {
+        this.windowHeight = window.innerHeight - 180;
+
         let roomId = this.props.roomId;
 
         const promises = [
@@ -30,6 +36,7 @@ class ChatWindow extends React.Component {
                 roomInfo: dataList[0].data,
                 messages: dataList[1].data,
             });
+            this.scrollToBottom();
         }).catch(err => {
             console.log(err);
         });
@@ -99,6 +106,7 @@ class ChatWindow extends React.Component {
                 messages: [...messages, resp.data],
                 message: "",
             });
+            this.scrollToBottom();
         }).catch((error) => {
             console.log(error);
         });
@@ -123,8 +131,13 @@ class ChatWindow extends React.Component {
                         { this.renderNames(roomInfo) }
                     </div>
                 </header>
-                <section className={"chatWindow_body"}>
-                    { this.renderMessages() }
+                <section className={"chatWindow_body"} style={{height: this.windowHeight}}>
+                    <div className={"chatWindow_body_main"}>
+                        { this.renderMessages() }
+                        <div style={{ float:"left", clear: "both" }}
+                             ref={(el) => { this.messagesEnd = el; }}>
+                        </div>
+                    </div>
                 </section>
                 <section className={"chatWindow_bottom"}>
                     <div className={"chatWindow_bottom_inputContainer"}>

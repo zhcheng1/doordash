@@ -1,14 +1,37 @@
 html, body {
   height: 100%;
-  margin: 0; }
+  margin: 0;
+  font-size: 16px; }
+
+h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: normal; }
 
 .homePage {
   display: flex;
   flex-direction: row; }
 
 .sideMenu {
-  flex: 0 1 300px;
-  background: #FF163E; }
+  flex: 0 1 200px;
+  background: #FF163E;
+  color: #fff; }
+  .sideMenu .sideMenu_header {
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 20px; }
+    .sideMenu .sideMenu_header .sideMenu_onlineTime {
+      font-size: 0.8rem; }
+  .sideMenu .sideMenu_link {
+    padding: 15px 20px; }
+    .sideMenu .sideMenu_link a {
+      color: #fff;
+      text-decoration: none;
+      width: 100%;
+      display: block; }
+    .sideMenu .sideMenu_link:hover {
+      background-color: #DA260D; }
   .sideMenu .sideMenu_link_active {
     background-color: #DA260D; }
 
@@ -54,3 +77,63 @@ html, body {
     cursor: pointer; }
     .loginPage .loginPage_button:hover {
       background-color: #DA260D; }
+
+.chatWindow {
+  flex: 1 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+  .chatWindow .chatWindow_header {
+    border-bottom: 2px solid #ddd;
+    text-align: center;
+    padding: 15px; }
+    .chatWindow .chatWindow_header .chatWindow_nameList {
+      margin-top: 10px;
+      text-transform: capitalize; }
+    .chatWindow .chatWindow_header .chatWindow_currentUserName {
+      color: #FF163E; }
+  .chatWindow .chatWindow_body {
+    flex: 1;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; }
+    .chatWindow .chatWindow_body .chatWindow_messageContainer {
+      margin-bottom: 10px; }
+    .chatWindow .chatWindow_body .chatWindow_message {
+      padding: 10px 20px;
+      border-radius: 20px;
+      max-width: 45%;
+      background-color: #fff;
+      margin-bottom: 5px;
+      min-width: 50px; }
+    .chatWindow .chatWindow_body .charWindow_message_self {
+      align-self: flex-end;
+      color: #fff; }
+      .chatWindow .chatWindow_body .charWindow_message_self .chatWindow_message {
+        background-color: #FF163E; }
+  .chatWindow .chatWindow_bottom {
+    border-top: 2px solid #ddd;
+    padding: 15px;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    order: 1; }
+    .chatWindow .chatWindow_bottom .chatWindow_bottom_inputContainer {
+      flex-grow: 1; }
+      .chatWindow .chatWindow_bottom .chatWindow_bottom_inputContainer input {
+        background-color: #fff;
+        border: 1px solid #CCC;
+        border-radius: 3px;
+        box-sizing: border-box;
+        color: #333;
+        outline: none;
+        padding: 8px 12px;
+        width: 100%;
+        line-height: 24px;
+        font-size: 1rem; }
+    .chatWindow .chatWindow_bottom .chatWindow_bottom_button {
+      font-size: 1.5rem;
+      color: #0084bf;
+      border: none;
+      cursor: pointer; }
